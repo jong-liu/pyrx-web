@@ -75,6 +75,15 @@
   .mode-tab.active { background: var(--accent); color: #fff; }
   .mode-tab:hover:not(.active) { background: var(--border); }
 
+  /* Primary function switch (Single ligand vs Virtual screening) — larger & emphasized */
+  .mode-tabs--primary { border: 2px solid var(--primary); border-radius: 8px;
+                        box-shadow: 0 1px 3px rgba(31,73,125,.18); }
+  .mode-tabs--primary .mode-tab { padding: 9px 22px; font-size: 14px; letter-spacing: .2px; }
+  .mode-tabs--primary .mode-tab.active {
+    background: linear-gradient(135deg, var(--primary), var(--accent)); color: #fff; }
+  .mode-tabs--primary .mode-tab:not(.active) { background: var(--surface); color: var(--primary); }
+  .mode-tabs--primary .mode-tab:hover:not(.active) { background: var(--code-bg); }
+
   /* Upload zone */
   .upload-zone { border: 2px dashed var(--border); border-radius: 6px; padding: 12px 16px;
                  text-align: center; cursor: pointer; transition: border-color .15s; }
@@ -445,7 +454,7 @@
   <!-- Docking form -->
   <div class="card">
     <h2>Submit Docking Job</h2>
-    <div class="mode-tabs" style="margin-bottom:14px">
+    <div class="mode-tabs mode-tabs--primary" style="margin-bottom:14px">
       <button class="mode-tab active" id="modeTabSingle" onclick="setScreenMode(false)">Single ligand</button>
       <button class="mode-tab"        id="modeTabScreen" onclick="setScreenMode(true)">Virtual screening</button>
     </div>
